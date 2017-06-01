@@ -4,14 +4,23 @@
     Author     : jasper
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Beer Selection!</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <p>Choose color:</p>
+        <form action="/beer" method="post">
+            <select>
+                <c:forEach items="${colours}" var="item">
+                    <option name="${item}">${item}</option>
+                </c:forEach>
+            </select>
+            <input type="submit" />
+        </form>
     </body>
 </html>
