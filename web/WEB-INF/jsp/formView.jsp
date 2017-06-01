@@ -14,10 +14,10 @@
     </head>
     <body>
         <p>Choose color:</p>
-        <form action="/beer" method="post">
-            <select>
+        <form action="beer.htm" method="post" modelAttribute="colour">
+            <select name="colourResult">
                 <c:forEach items="${colours}" var="item">
-                    <option name="${item}">${item}</option>
+                    <option value="${item}">${item}</option>
                 </c:forEach>
             </select>
             <input type="submit" />
